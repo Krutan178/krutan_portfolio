@@ -26,7 +26,7 @@ function App() {
     }, 1200);
 
     return () => clearTimeout(timer);
-  }, []);
+  },[]);
 
   return (
     <Router>
