@@ -1,0 +1,5 @@
+allowBuilds:
+  core-js: set this to true or false
+  core-js-pure: set this to true or false
+  react-tsparticles: set this to true or false
+  tsparticles: set this to true or false
