@@ -159,8 +159,8 @@ export function ChanhDaiMarkIsometric() {
       {/* Dashed background isometric grid line */}
       <g className="stroke-line" strokeWidth="1" strokeDasharray="4 2">
         <path d="M-483.83 698L1068.09 -198" />
-        <path d="M1012.66 766L-483.83 -98" />
-        <path d="M1090.26 593.2L-406.23 -270.8" />
+        <path d="M1012.66 794L-483.83 -70" />
+        <path d="M1090.26 621.2L-406.23 -242.8" />
       </g>
 
       {/* 3D Drop Walls (Extrusion) */}
