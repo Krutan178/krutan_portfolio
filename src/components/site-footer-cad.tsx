@@ -32,7 +32,7 @@ const OPENPANEL_URL =
 
 // Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
 // would read `ncdai.localhost` in dev.
-const SITE_TITLE = "krutan.dev"
+const SITE_TITLE = "krutan.site"
 
 const SITE_SUBTITLE = packageJson.description
 
