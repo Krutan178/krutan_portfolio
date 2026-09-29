@@ -70,20 +70,29 @@ const POINTS_FORMATTER = new Intl.NumberFormat("en-US", {
 
 const getCachedHealth = unstable_cache(
   async () => {
-    const response = await fetch(REGISTRIES_URL)
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 3000)
 
-    // Throwing instead of returning null keeps the last good value in the cache
-    // when ui.shadcn.com has a transient failure.
-    if (!response.ok) {
-      throw new Error(`Failed to fetch registries: ${response.status}`)
+    try {
+      const response = await fetch(REGISTRIES_URL, {
+        signal: controller.signal,
+      })
+
+      // Throwing instead of returning null keeps the last good value in the cache
+      // when ui.shadcn.com has a transient failure.
+      if (!response.ok) {
+        throw new Error(`Failed to fetch registries: ${response.status}`)
+      }
+
+      const registries = registriesSchema.parse(await response.json())
+      const registry = registries.find(
+        (item) => item.name === registryConfig.namespace
+      )
+
+      return healthSchema.safeParse(registry?.health).data ?? null
+    } finally {
+      clearTimeout(timeoutId)
     }
-
-    const registries = registriesSchema.parse(await response.json())
-    const registry = registries.find(
-      (item) => item.name === registryConfig.namespace
-    )
-
-    return healthSchema.safeParse(registry?.health).data ?? null
   },
   ["registry-health"],
   // Same interval as the header's GitHub stars, so the badge never makes the

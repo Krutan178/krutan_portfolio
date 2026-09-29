@@ -6,16 +6,22 @@ import { GitHubStars } from "@/components/github-stars"
 const getStargazerCount = unstable_cache(
   async () => {
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 3000)
+
       const response = await fetch(
         `https://api.github.com/repos/${SOURCE_CODE_GITHUB_REPO}`,
         {
+          signal: controller.signal,
           headers: {
             Accept: "application/vnd.github+json",
             Authorization: `Bearer ${process.env.GITHUB_API_TOKEN}`,
             "X-GitHub-Api-Version": "2026-03-10",
           },
         }
-      )
+      ).finally(() => {
+        clearTimeout(timeoutId)
+      })
 
       if (!response.ok) {
         return 0
@@ -32,7 +38,7 @@ const getStargazerCount = unstable_cache(
 )
 
 export async function NavItemGitHub() {
-  const stargazersCount = await getStargazerCount()
+  const stargazersCount = await getStargazerCount().catch(() => 0)
 
   return (
     <GitHubStars

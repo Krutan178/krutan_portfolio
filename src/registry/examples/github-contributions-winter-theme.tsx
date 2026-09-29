@@ -5,13 +5,18 @@ import {
   GitHubContributions,
   GitHubContributionsFallback,
 } from "@/registry/components/github-contributions"
-import { getCachedContributions } from "@/registry/components/github-contributions/lib/get-cached-contributions"
+import {
+  getCachedContributions,
+  getMockContributions,
+} from "@/registry/components/github-contributions/lib/get-cached-contributions"
 
 const GITHUB_USERNAME = "ncdai"
 const GITHUB_PROFILE_URL = "https://github.com/ncdai"
 
 export default function GitHubContributionsWinterTheme() {
-  const contributions = getCachedContributions(GITHUB_USERNAME)
+  const contributions = getCachedContributions(GITHUB_USERNAME).catch(() =>
+    getMockContributions()
+  )
 
   return (
     <Suspense fallback={<GitHubContributionsFallback />}>
