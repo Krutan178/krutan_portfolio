@@ -27,6 +27,7 @@ import {
   V0Icon,
 } from "@/components/icons"
 import { CopyStateIcon } from "@/registry/components/copy-button"
+import { SOURCE_CODE_GITHUB_URL } from "@/config/site"
 
 const cache = new Map<string, string>()
 
@@ -131,7 +132,7 @@ export function ViewOptions({
       {
         title: "Open in GitHub",
         // Source files remain .mdx even though the public URL uses .md
-        href: `https://github.com/ncdai/chanhdai.com/blob/main/src/features/doc/content/${markdownUrl.replace(/^\//, "").replace(/\.md$/, ".mdx")}`,
+        href: `${SOURCE_CODE_GITHUB_URL}/blob/main/src/features/doc/content/${markdownUrl.replace(/^\//, "").replace(/\.md$/, ".mdx")}`,
         icon: GitHubIcon,
       },
       {

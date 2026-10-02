@@ -27,9 +27,6 @@ const INSPIRED_BY = [
   "shadcncraft",
 ]
 
-const OPENPANEL_URL =
-  "https://openpanel.dev?utm_source=krutan.site&utm_medium=referral&utm_campaign=footer"
-
 // Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
 // would read `ncdai.localhost` in dev.
 const SITE_TITLE = "krutan.site"
@@ -121,21 +118,6 @@ export function SiteFooterCad() {
               </ul>
             </Field>
 
-            <Field label="Analytics">
-              <ul className="flex flex-col gap-0.5">
-                <li>
-                  <a
-                    className="link-underline"
-                    href={OPENPANEL_URL}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    OpenPanel
-                  </a>
-                </li>
-                <li>Google Analytics</li>
-              </ul>
-            </Field>
 
             <Field label="For agents">
               <ul className="flex flex-col gap-0.5">

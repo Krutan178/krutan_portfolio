@@ -51,24 +51,6 @@ export function SiteFooter() {
             <dd>Vercel</dd>
           </Item>
 
-          <Item>
-            <dt>Analytics</dt>
-            <dd>
-              <ul>
-                <li>
-                  <a
-                    className="link-underline"
-                    href="https://openpanel.dev?utm_source=krutan.site&utm_medium=referral&utm_campaign=footer"
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    OpenPanel
-                  </a>
-                </li>
-                <li>Google Analytics</li>
-              </ul>
-            </dd>
-          </Item>
 
           <Item>
             <dt>Source code</dt>

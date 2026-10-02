@@ -2,7 +2,6 @@ import "@/styles/globals.css"
 
 import type { Metadata, Viewport } from "next"
 import Script from "next/script"
-import { GoogleTagManager } from "@next/third-parties/google"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 import type { WebSite, WithContext } from "schema-dts"
 
@@ -43,17 +42,17 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_INFO.url),
   title: {
     template: `%s – ${SITE_INFO.name}`,
-    default: `${USER.displayName} – ${USER.jobTitle}`,
+    default: USER.displayName,
   },
   description: SITE_INFO.description,
   keywords: SITE_INFO.keywords,
   authors: [
     {
-      name: "ncdai",
+      name: USER.displayName,
       url: SITE_INFO.url,
     },
   ],
-  creator: "ncdai",
+  creator: USER.displayName,
   openGraph: {
     siteName: SITE_INFO.name,
     url: "/",
@@ -164,9 +163,6 @@ export default function RootLayout({
         <JsonLdScript data={getWebSiteJsonLd()} />
       </head>
 
-      {process.env.NEXT_PUBLIC_GTM_ID && (
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-      )}
 
       <body>
         <Providers>

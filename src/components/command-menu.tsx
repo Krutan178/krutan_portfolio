@@ -16,12 +16,10 @@ import {
   FileTextIcon,
   GraduationCapIcon,
   LayersIcon,
-  LineChartIcon,
   MonitorIcon,
   MoonStarIcon,
   QuoteIcon,
   RssIcon,
-  SquareDashedIcon,
   SunMediumIcon,
   TextInitialIcon,
   TypeIcon,
@@ -137,13 +135,7 @@ const MENU_LINKS: CommandLinkItem[] = [
     icon: <BookmarkIcon />,
     shortcut: "GM",
   },
-  {
-    title: "Insights",
-    href: "/insights",
-    kind: "page",
-    icon: <LineChartIcon />,
-    shortcut: "GI",
-  },
+
   {
     title: "Testimonials",
     href: "/testimonials",
@@ -524,26 +516,6 @@ export function CommandMenu({
               >
                 <TypeIcon />
                 Copy Logotype as SVG
-              </CommandMenuItem>
-
-              <CommandMenuItem
-                onHighlight={() => {
-                  setSelectedCommandKind("link")
-                }}
-                onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-              >
-                <SquareDashedIcon />
-                Brand Guidelines
-              </CommandMenuItem>
-
-              <CommandMenuItem onHighlight={handleCommandHighlight} asChild>
-                <a
-                  href="https://assets.chanhdai.com/chanhdai-brand.zip"
-                  download
-                >
-                  <DownloadIcon />
-                  Download Brand Assets
-                </a>
               </CommandMenuItem>
             </CommandGroup>
 

@@ -45,8 +45,8 @@ const CARDS = [
     avatar: "https://assets.chanhdai.com/avatars/x/emilkowalski.webp",
   },
   {
-    name: "Chánh Đại",
-    handle: "@iamncdai",
-    avatar: "https://assets.chanhdai.com/avatars/x/iamncdai.webp",
+    name: "Krutan Lakeshri",
+    handle: "@Krutan_lakeshri",
+    avatar: "https://github.com/Krutan178.png",
   },
 ]

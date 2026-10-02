@@ -7,30 +7,30 @@ export const USER: User = {
   username: "Krutan178",
   gender: "male",
   pronouns: "he/him",
-  bio: "Software Engineer crafting high-performance, resilient digital experiences.",
+  bio: "Full Stack Developer with 1.5+ years of experience developing web and IoT solutions using React.js, TypeScript, Python Flask, Laravel, and MQTT.",
   flipSentences: [
-    "Software Developer & Engineer.",
-    "Specializing in React, Node.js & Scalable Systems.",
-    "MCA Graduate • Mumbai University.",
+    "Full Stack Developer & IoT Engineer.",
+    "Specializing in React, TypeScript, Python Flask & Laravel.",
+    "MCA Graduate • University of Mumbai.",
     "Based in Mumbai, India.",
   ],
-  address: "Mumbai, Maharashtra, India",
-  phoneNumberB64: "", // optional phone
+  address: "Virar, Palghar, Maharashtra, India",
+  phoneNumberB64: "KzkxNzY2NjI1Mzg5MQ==", // base64 encoded +917666253891
   emailB64: "a3J1dGFubGFrZXNocmlAZ21haWwuY29t", // base64 encoded krutanlakeshri@gmail.com
   website: "https://github.com/Krutan178",
   jobTitle: "Software Developer",
   jobs: [
     {
       title: "Software Developer",
-      company: "A-1 Fence Products Pvt. Ltd.",
+      company: "A-1 Fence Products Company Pvt Ltd.",
       website: "https://www.a1fenceproducts.com/",
       experienceId: "a1fence",
     },
   ],
-  about: `- I’m Krutan Lakeshri — a passionate Software Developer based in Mumbai, India.
-- I combine deep technical curiosity with an eye for refined digital products that solve tangible problems.
-- Focused on bridging robust backend architectures with fluid, responsive user interfaces.
-- Experienced across full-stack JavaScript/TypeScript ecosystems, containerization with Docker, and cloud-native workflows.
+  about: `- I’m Krutan Lakeshri — Full Stack Developer with 1.5+ years of experience developing web and IoT solutions based in Virar, Palghar (Mumbai area), India.
+- Skilled in engineering scalable applications, REST APIs, and real-time device monitoring systems using React.js, TypeScript, Python Flask, Laravel, MQTT, and Raspberry Pi.
+- Experienced across full-stack JavaScript/TypeScript ecosystems, relational & NoSQL databases (MySQL, SQLite, MongoDB), and industrial protocol communications (MQTT, Modbus, VMS).
+- Passionate about bridging robust backend architectures with fluid, responsive user interfaces.
 `,
   avatar: "https://github.com/Krutan178.png",
   avatarVariants: {
@@ -48,11 +48,15 @@ export const USER: User = {
     "krutan178",
     "software developer",
     "full stack engineer",
+    "iot developer",
+    "react",
+    "typescript",
+    "python flask",
+    "laravel",
+    "mqtt",
+    "raspberry pi",
     "mumbai",
     "india",
-    "react",
-    "next.js",
-    "node.js",
   ],
   dateCreated: "2024-01-01",
 }

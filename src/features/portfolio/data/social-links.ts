@@ -13,13 +13,13 @@ export const SOCIAL = {
   linkedin: {
     title: "LinkedIn",
     handle: "krutan-lakeshri",
-    href: "https://in.linkedin.com/in/krutan-lakeshri?trk=people-guest_people_search-card",
+    href: "https://www.linkedin.com/in/krutan-lakeshri/",
     sameAs: true,
   },
   x: {
     title: "X",
-    handle: "@krutan",
-    href: "https://x.com/",
+    handle: "@Krutan_lakeshri",
+    href: "https://x.com/Krutan_lakeshri",
     sameAs: true,
   },
 } satisfies Record<string, SocialProfile>

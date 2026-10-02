@@ -4,33 +4,33 @@ export const TIMELINE_BIRTH_YEAR = 1999
 
 export const TIMELINE_MILESTONES: TimelineMilestone[] = [
   {
-    year: 2020,
+    year: 2019,
     content:
-      "Deepened focus on full-stack web engineering, JavaScript algorithms, and responsive UI design.",
+      "Enrolled in BSc in Computer Science at Patkar College of Science and Commerce (University of Mumbai).",
   },
   {
     year: 2021,
     content:
-      "Enrolled in Master in Computer Application (MCA) at Mumbai University, specializing in advanced software engineering, distributed systems, and databases.",
+      "Conducted Big Data Analysis research and deepened expertise in data processing and web architectures.",
   },
   {
     year: 2022,
-    content: `Built full-stack applications, real-time messaging systems, and computer vision capstones.
-Implemented containerized microservices and automated deployment workflows with Docker.`,
+    content: `Graduated with BSc in Computer Science from Patkar College.
+Enrolled in Master of Computer Applications (MCA) at Hiray Institute of Computer Application (University of Mumbai).`,
   },
   {
     year: 2023,
-    content: `Graduated with Master in Computer Application (MCA) from Mumbai University.
-Joined A-1 Fence Products Pvt. Ltd. as Software Developer, engineering operational tools and scalable backend services.`,
+    content: `Engineered full-stack platforms including Food Ordering System (Next.js/MongoDB), Vote For Us election platform, and ASP.NET MVC Movie Store.
+Completed certification in Blockchain and its Applications.`,
   },
   {
     year: 2024,
-    content: `Architected real-time communication platforms (Chatify Hub) and technical publishing tools (Bits-0f-C0de).
-Enhanced capabilities across TypeScript, React, and server-side optimization.`,
+    content: `Graduated with MCA from University of Mumbai. Certified as Postman Student Expert.
+Worked as Laravel Developer Intern at AshasWeb building the Gigfly marketplace, and as Software Developer at Ambetronics Engineers managing MQTT pipelines.
+Joined A-1 Fence Products Company Pvt Ltd as Software Developer, engineering real-time IoT monitoring dashboards with React, TypeScript, and Python Flask.`,
   },
   {
     year: 2025,
-    content: `Developed robust enterprise applications at A-1 Fence Products Pvt. Ltd.
-Focusing on modern cloud architectures, developer tools, and high-performance user experiences.`,
+    content: `Architecting scalable IoT telemetry applications, protocol communications (Modbus, MQTT, VMS), and full-stack systems at A-1 Fence Products.`,
   },
 ]

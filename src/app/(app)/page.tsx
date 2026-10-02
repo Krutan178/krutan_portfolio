@@ -15,6 +15,9 @@ import { TechStack } from "@/features/portfolio/components/tech-stack"
 import { USER } from "@/features/portfolio/data/user"
 
 export const metadata: Metadata = {
+  title: {
+    absolute: USER.displayName,
+  },
   alternates: {
     canonical: "/",
   },
