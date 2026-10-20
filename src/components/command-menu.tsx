@@ -48,8 +48,8 @@ import type { DocPreview } from "@/features/doc/types/document"
 import { SOCIAL_ICONS } from "@/features/portfolio/components/social-link-icons"
 import { SOCIAL_LINKS } from "@/features/portfolio/data/social-links"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
+import { KlMark, getMarkSVG } from "./kl-mark"
+import { getWordmarkSVG } from "./kl-wordmark"
 import {
   FavouriteIcon,
   GridViewIcon,
@@ -90,7 +90,7 @@ const MENU_LINKS: CommandLinkItem[] = [
     title: "Home",
     href: "/",
     kind: "page",
-    icon: <ChanhDaiMark />,
+    icon: <KlMark />,
     shortcut: "GH",
   },
   {
@@ -504,7 +504,7 @@ export function CommandMenu({
                   handleCopyText(getMarkSVG(), "Mark as SVG copied")
                 }}
               >
-                <ChanhDaiMark />
+                <KlMark />
                 Copy Mark as SVG
               </CommandMenuItem>
 
@@ -719,7 +719,7 @@ function CommandMenuFooter({
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 rounded-b-2xl px-4 text-xs font-medium">
-        <ChanhDaiMark className="size-6 text-muted-foreground" />
+        <KlMark className="size-6 text-muted-foreground" />
 
         <div className="flex items-center gap-2 max-sm:hidden">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind ?? "page"]}</span>

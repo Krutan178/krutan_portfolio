@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/context-menu"
 import { toast } from "@/components/ui/toast"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
+import { KlMark, getMarkSVG } from "./kl-mark"
+import { getWordmarkSVG } from "./kl-wordmark"
 
 export function BrandContextMenu({ children }: { children: React.ReactNode }) {
   const { success } = useTiks()
@@ -38,7 +38,7 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
             success()
           }}
         >
-          <ChanhDaiMark className="size-4" />
+          <KlMark className="size-4" />
           Copy Mark as SVG
         </ContextMenuItem>
 

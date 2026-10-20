@@ -12,9 +12,8 @@ import { SOCIAL } from "@/features/portfolio/data/social-links"
 // Imported here rather than through `@/config/site`, which client components
 // pull in, to keep the manifest out of client bundles.
 import packageJson from "../../package.json"
-// Precomputed by `pnpm registry:build`, so the count costs no registry import.
 import registryStats from "../../registry-stats.json"
-import { ChanhDaiMark } from "./chanhdai-mark"
+import { KlMark } from "./kl-mark"
 
 const INSPIRED_BY = [
   "Tailwind CSS",
@@ -28,7 +27,7 @@ const INSPIRED_BY = [
 ]
 
 // Not derived from `SITE_INFO.url`: that follows `NEXT_PUBLIC_APP_URL` and
-// would read `ncdai.localhost` in dev.
+// would read `krutan.localhost` in dev.
 const SITE_TITLE = "krutan.site"
 
 const SITE_SUBTITLE = packageJson.description
@@ -176,7 +175,7 @@ export function SiteFooterCad() {
             className="mr-auto text-muted-foreground transition-[color] hover:text-foreground"
             aria-label="Home"
           >
-            <ChanhDaiMark className="h-4" />
+            <KlMark className="h-4" />
           </Link>
 
           <a

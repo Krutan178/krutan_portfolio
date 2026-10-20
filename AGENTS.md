@@ -1,45 +1,32 @@
-# AI agent guidelines for chanhdai.com
+# AI agent guidelines for krutan.site
 
 Next.js 16 (App Router) portfolio, blog, and shadcn registry website.
 
-**Stack**: TypeScript, React 19, Tailwind CSS v4, shadcn/ui, MDX, Vitest, pnpm (Bun for scripts), Vercel
+**Stack**: TypeScript, React 19, Tailwind CSS v4, shadcn/ui, MDX, Vitest, pnpm (Bun for utility scripts), Vercel
 
 ## Project structure
 
 | Directory                              | Purpose                                                            |
 | -------------------------------------- | ------------------------------------------------------------------ |
-| `src/app/`                             | App Router pages, layouts, API routes                              |
-| `src/components/`                      | Shared UI components                                               |
-| `src/registry/`                        | Registry source (components, hooks, blocks, examples, lib)         |
-| `src/features/`                        | Feature modules: `doc`, `blog`, `portfolio`, `sponsor`, `bookmark` |
+| `src/app/`                             | App Router pages, layouts, API routes (`game/`, `og/`, `vcard/`)    |
+| `src/components/`                      | Shared UI components (`kl-mark.tsx`, `kl-wordmark.tsx` are the brand mark) |
+| `src/registry/`                        | Registry source (components, hooks, blocks, examples, lib)          |
+| `src/features/`                        | Feature modules: `portfolio`, `doc`, `blog`, `block`, `bookmark`, `craft`, `sponsor` |
 | `src/config/`                          | Site (`site.ts`), registry (`registry.ts`), JSON-LD config         |
-| `src/scripts/`                         | Build scripts (registry, capture) run with Bun                     |
-| `src/hooks/`, `src/lib/`, `src/utils/` | Hooks, libraries, utilities                                        |
+| `src/scripts/`                         | Utility scripts run with Bun (registry build, capture)             |
+| `src/hooks/`, `src/lib/`, `src/utils/`, `src/types/` | Hooks, libraries, utilities, shared types             |
 
-**Key files**: `components.json` (shadcn config), `src/features/portfolio/data/` (portfolio data), `src/features/{sponsor,bookmark}/data.tsx` (sponsor and bookmark data), `.env.example` (env vars)
+**Key files**: `components.json` (shadcn config incl. registry aliases), `src/features/portfolio/data/` (all portfolio content), `src/features/{sponsor,craft}/data.ts` (feature data), `.env.local` (env vars)
 
 ## Component registry
 
-Built on shadcn/ui. Registry types and their definition files:
+Built on shadcn/ui. Registry sources live in `src/registry/` split by type
+(`components/`, `hooks/`, `blocks/`, `examples/`, `lib/`, `styles/`, each with
+its own `_registry.ts`). The build scripts exist in `src/scripts/` but are not
+wired into `package.json` yet, so treat the checked-in generated files as
+correct and never hand-edit them:
 
-| Type                 | File                                   |
-| -------------------- | -------------------------------------- |
-| `registry:component` | `src/registry/components/_registry.ts` |
-| `registry:hook`      | `src/registry/hooks/_registry.ts`      |
-| `registry:block`     | `src/registry/blocks/_registry.ts`     |
-| `registry:example`   | `src/registry/examples/_registry.ts`   |
-| `registry:lib`       | `src/registry/lib/_registry.ts`        |
-| `registry:style`     | `src/registry/styles/_registry.ts`     |
-
-**NEVER EDIT** auto-generated outputs of `pnpm registry:build`: `registry.json`, `registry-stats.json`, `src/registry/__index__.tsx`, `public/r/*.json`
-
-### Adding a new component
-
-1. Create component in `src/registry/components/[name]/`
-2. Register in the appropriate `_registry.ts` file
-3. Create example in `src/registry/examples/`
-4. Run `pnpm registry:build`
-5. Add docs MDX in `src/features/doc/content/components/` (category is derived from the folder)
+**NEVER EDIT** auto-generated outputs: `registry.json`, `registry-stats.json`, `src/registry/__index__.tsx`, `public/r/*.json`
 
 ## Content system
 
@@ -62,20 +49,20 @@ All content lives in `src/features/doc/content/` as MDX files, split into `blog/
 
 ```bash
 pnpm dev                # Dev server
-pnpm build              # Production build (runs registry:build first)
+pnpm preview            # Production build + start
+pnpm build              # Production build
 pnpm test               # Vitest (watch)
 pnpm test:run           # Vitest (single run)
-pnpm lint               # ESLint
+pnpm lint               # ESLint (cached)
 pnpm lint:fix           # ESLint with --fix
-pnpm format:write       # Prettier
 pnpm check-types        # Type checking (tsc --noEmit)
-pnpm registry:build     # Build shadcn registry (Bun script + shadcn build)
-pnpm registry:validate  # Validate generated registry.json
+pnpm format:check       # Prettier check
+pnpm format:write       # Prettier
 ```
 
 ### Local dev URL
 
-A dev server is usually already running behind `https://ncdai.localhost` (see `allowedDevOrigins` in `next.config.ts` and `NEXT_PUBLIC_APP_URL` in `.env.local`). Use that origin to test pages and routes, never `http://localhost:3000` or a raw port. It also makes generated absolute URLs match what the code produces.
+A dev server is usually already running behind `https://krutan.localhost` (see `allowedDevOrigins` in `next.config.ts` and `NEXT_PUBLIC_APP_URL` in `.env.local`). Use that origin to test pages and routes, never `http://localhost:3000` or a raw port. It also makes generated absolute URLs match what the code produces.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

@@ -25,7 +25,7 @@ const transition: Transition = {
  * 3D Isometric "KL" Interactive Monogram Button for Krutan Lakeshri.
  * Follows cursor position with dynamic radial spotlight and plays mechanical click sound on tap.
  */
-export function ChanhDaiMarkIsometric() {
+export function KlMarkIsometric() {
   const id = useId()
   const ids = {
     facePattern: `kl-face-pattern-${id}`,
@@ -189,4 +189,4 @@ export function ChanhDaiMarkIsometric() {
   )
 }
 
-export default ChanhDaiMarkIsometric
+export default KlMarkIsometric

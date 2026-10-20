@@ -1,7 +1,7 @@
 export const registryConfig = {
   /**
    * Registry namespace identifier for shadcn CLI
-   * @example "@ncdai" - Users can install components with: `npx shadcn add @ncdai/wheel-picker`
+   * @example "@krutan" - Users can install components with: `npx shadcn add @krutan/wheel-picker`
    * @see https://ui.shadcn.com/docs/registry/namespace#overview
    */
   namespace: process.env.NEXT_PUBLIC_REGISTRY_NAMESPACE || "@krutan",

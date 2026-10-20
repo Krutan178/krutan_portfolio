@@ -15,30 +15,48 @@ export const RECOGNITION_PINNED_KEYS: string[] = []
  * Awards, certifications, and IP registrations merged into one list, newest
  * first. Date ties keep source order (awards, then certifications, then IP).
  */
-export const RECOGNITION_BY_DATE: RecognitionEntry[] = [
-  ...AWARDS.map((award) => ({
-    kind: "award" as const,
-    key: award.id,
-    date: award.date,
-    award,
-  })),
-  ...CERTIFICATIONS.map((credential) => ({
-    kind: "certificate" as const,
-    key: credential.credentialURL,
-    date: credential.issueDate,
-    credential,
-  })),
-  ...INTELLECTUAL_PROPERTY.map((credential) => ({
-    // IP entries already name their registration kind for the icon lookup.
-    kind:
-      credential.issuerIconName === "copyright"
-        ? ("copyright" as const)
-        : ("trademark" as const),
-    key: credential.credentialURL,
-    date: credential.issueDate,
-    credential,
-  })),
-].sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+export const RECOGNITION_BY_DATE: RecognitionEntry[] = dedupeKeys(
+  [
+    ...AWARDS.map((award) => ({
+      kind: "award" as const,
+      key: award.id,
+      date: award.date,
+      award,
+    })),
+    ...CERTIFICATIONS.map((credential) => ({
+      kind: "certificate" as const,
+      key: credential.credentialURL,
+      date: credential.issueDate,
+      credential,
+    })),
+    ...INTELLECTUAL_PROPERTY.map((credential) => ({
+      // IP entries already name their registration kind for the icon lookup.
+      kind:
+        credential.issuerIconName === "copyright"
+          ? ("copyright" as const)
+          : ("trademark" as const),
+      key: credential.credentialURL,
+      date: credential.issueDate,
+      credential,
+    })),
+  ].sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+)
+
+/**
+ * Credential URLs double as entry keys, and placeholder data can reuse the
+ * same URL for several entries, so repeated keys get an ordinal suffix to
+ * keep list keys unique.
+ */
+function dedupeKeys<T extends { key: string }>(entries: T[]): T[] {
+  const seen = new Map<string, number>()
+
+  return entries.map((entry) => {
+    const count = seen.get(entry.key) ?? 0
+    seen.set(entry.key, count + 1)
+
+    return count === 0 ? entry : { ...entry, key: `${entry.key}#${count}` }
+  })
+}
 
 /** Home page order: pinned entries first, then the rest newest first. */
 export const RECOGNITION = pinFirst(
