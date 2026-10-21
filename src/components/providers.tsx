@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes"
 import { Toaster } from "@/components/ui/toast"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { KeyboardShortcuts } from "@/components/keyboard-shortcuts"
+import { Analytics } from "@/components/analytics"
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -19,6 +20,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         defaultTheme="system"
         attribute="class"
       >
+        <Analytics />
         <ProgressProvider
           color="var(--foreground)"
           height="2px"
