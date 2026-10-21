@@ -7,7 +7,9 @@ import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import { DmcaIcon, GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons"
 import { SiteFooterInteractiveLogotype } from "@/components/site-footer-brand"
+import { BuyMeCoffee } from "@/components/buy-me-coffee"
 import { SOCIAL } from "@/features/portfolio/data/social-links"
+import { COFFEE } from "@/config/site"
 
 // Imported here rather than through `@/config/site`, which client components
 // pull in, to keep the manifest out of client bundles.
@@ -177,6 +179,8 @@ export function SiteFooterCad() {
           >
             <KlMark className="h-4" />
           </Link>
+
+          {(COFFEE.upiId || COFFEE.gatewayUrl) && <BuyMeCoffee />}
 
           <a
             className="flex items-center transition-[color] hover:text-foreground"

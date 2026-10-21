@@ -41,3 +41,17 @@ export const SPONSORSHIP_URL = ""
 export const UTM_PARAMS = {
   utm_source: "krutan.site",
 }
+
+/**
+ * Buy-me-a-coffee receiver configuration.
+ *
+ * The plain UPI intent flow needs only a VPA. When the self-hosted YouPI PG
+ * gateway (https://github.com/youpi-pg/YouPI-PG) is configured, payments go
+ * through its verified checkout instead of an unconfirmed UPI intent.
+ */
+export const COFFEE = {
+  payeeName: process.env.NEXT_PUBLIC_COFFEE_PAYEE_NAME || SITE_INFO.name,
+  upiId: process.env.NEXT_PUBLIC_COFFEE_UPI_ID || "",
+  gatewayUrl: process.env.NEXT_PUBLIC_YOUPI_GATEWAY_URL || "",
+  merchantKey: process.env.NEXT_PUBLIC_YOUPI_MERCHANT_KEY || "",
+}
