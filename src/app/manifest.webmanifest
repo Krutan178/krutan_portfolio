@@ -4,16 +4,22 @@
   "description": "Software Developer crafting high-performance, resilient digital experiences.",
   "icons": [
     {
-      "src": "https://github.com/Krutan178.png",
+      "src": "/icon-192.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any"
     },
     {
-      "src": "https://github.com/Krutan178.png",
+      "src": "/icon-512.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "id": "/?utm_source=pwa",
